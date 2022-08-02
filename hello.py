@@ -1,4 +1,4 @@
-from flask import Flask # 1º.creo aplicación importandolibrería
+from flask import Flask # 1º.creo aplicación importando librería
 
 """
 Para ejecutar la app de Flask necesitamos un servidor web.
