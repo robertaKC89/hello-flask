@@ -1,10 +1,20 @@
-from balance import app
+from flask import render_template
+from . import app
+from .models import ListaMovimientos
 
 # a cada ruta Flask puede decorar una función con @ para especificarle cosas desde fuera
 # estas rutas son para la estructura principal de mi app balance
 @app .route ('/')
 def home():
-    return 'Página de inicio'
+    '''
+    muestra la lista de movimientos cargados
+    '''
+    movimientos = ListaMovimientos()
+    movimientos.leer_archivo()
+    #llamo y ejecuto pasandole a Flask inicio.html xk lo buscará en templates
+    #le paso también lista_movimientos lo que he creado en la plantilla movs de inicio.html
+    return render_template("inicio.html", movs=movimientos.lista_movimientos)    
+    
 
 @app .route ('/nuevo')
 def nuevo ():

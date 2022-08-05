@@ -1,0 +1,11 @@
+/* estoy construyendo CSS para apariencia de la web */
+header {
+    background-color: #b8174c;
+    color: white;
+    height: 50px;
+    font-size: medium;
+    line-height: 50px;
+    padding: 25px;
+
+
+}
