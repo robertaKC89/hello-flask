@@ -31,13 +31,19 @@
             <tr>
             <!-- aquí quiero bucle y con Flask tengo instaladas plantillas para trabajar con datos externos-->
             <!-- uso sintaxis especial {{doble llave}} -->  
-                <td>{{mov.fecha}}</td>
-                <td>{{mov.concepto}}</td>
-                <td>{{mov.tipo}}</td>
-                <td>{{mov.cantidad}}</td>
+                <td>{{ mov.fecha }}</td>
+                <td>{{ mov.concepto }}</td>
+                <td>
+                    {% if mov.tipo == 'I' %}
+                    Ingreso
+                    {% else %}
+                    Gasto
+                    {% endif %}
+                </td>
+                    
+                <td>{{ mov.cantidad }}</td>
             </tr>
             {% endfor %}
-
         </table>
     </main>
     <!-- me creo pie de pagina -->

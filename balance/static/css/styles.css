@@ -33,3 +33,9 @@ table.paper {
     border-bottom: #19a187 1px solid;
     text-align: left;
 }
+
+.pie-de-pagina{
+    margin-top: 40px;
+    padding: 20px;
+    border: solid 1px #b8174c;
+}
