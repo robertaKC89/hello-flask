@@ -16,27 +16,30 @@
     <nav>
         Inicio | Nuevo
     </nav>
-    <!-- Me autorrellena el código dando minimas directrices: table.lista>tr>th*4 -->
-    <table class="paper">
-        <tr>
-            <th>Fecha</th>
-            <th>Concepto</th>
-            <th>Tipo</th>
-            <th>Cantidad</th> 
-        </tr>
-        <!-- este for es para recorrer tabla de datos en bucle (por ello esta sintaxis especial) -->
-        {% for mov in movs%}
-        <tr>
-        <!-- aquí quiero bucle y con Flask tengo instaladas plantillas para trabajar con datos externos-->
-        <!-- uso sintaxis especial {{doble llave}} -->  
-            <td>{{mov.fecha}}</td>
-            <td>{{mov.concepto}}</td>
-            <td>{{mov.tipo}}</td>
-            <td>{{mov.cantidad}}</td>
-        </tr>
-        {% endfor %}
+    <!-- en el bloque main metemos el contenido principal de la pagina -->
+    <main> 
+        <!-- Me autorrellena el código dando minimas directrices: table.lista>tr>th*4 -->
+        <table class="paper">
+            <tr>
+                <th class="titulo-tabla">Fecha</th>
+                <th class="titulo-tabla">Concepto</th>
+                <th class="titulo-tabla">Tipo</th>
+                <th class="titulo-tabla">Cantidad</th> 
+            </tr>
+            <!-- este for es para recorrer tabla de datos en bucle (por ello esta sintaxis especial) -->
+            {% for mov in movs%}
+            <tr>
+            <!-- aquí quiero bucle y con Flask tengo instaladas plantillas para trabajar con datos externos-->
+            <!-- uso sintaxis especial {{doble llave}} -->  
+                <td>{{mov.fecha}}</td>
+                <td>{{mov.concepto}}</td>
+                <td>{{mov.tipo}}</td>
+                <td>{{mov.cantidad}}</td>
+            </tr>
+            {% endfor %}
 
-    </table>
+        </table>
+    </main>
     <!-- me creo pie de pagina -->
     <footer class="pie_de_pagina">2022 Bootcamp cero.</footer>
 </body>
