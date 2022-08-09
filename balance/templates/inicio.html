@@ -26,8 +26,10 @@
                 <th class="titulo-tabla">Tipo</th>
                 <th class="titulo-tabla">Cantidad</th> 
             </tr>
-            <!-- este for es para recorrer tabla de datos en bucle (por ello esta sintaxis especial) -->
-            {% for mov in movs%}
+            <!-- con if compruebo si la tabla está vacía y si no hay movs, else con el escrito -->
+            <!-- el for es para recorrer tabla de datos en bucle (por ello esta sintaxis especial) -->
+            {% if movs%}
+            {% for mov in movs %}
             <tr>
             <!-- aquí quiero bucle y con Flask tengo instaladas plantillas para trabajar con datos externos-->
             <!-- uso sintaxis especial {{doble llave}} -->  
@@ -39,11 +41,16 @@
                     {% else %}
                     Gasto
                     {% endif %}
-                </td>
-                    
-                <td>{{ mov.cantidad }}</td>
+                </td>   
+                <td class="numero">{{ mov.cantidad }}</td>
             </tr>
             {% endfor %}
+            {% else %}
+            <tr>
+                <!-- en esta class que me aplique los estilos de lista vacía -->
+                <td colspan = '4' class="lista-vacia"> No hay movimientos que mostrar</td>
+            </tr>
+            {% endif %}
         </table>
     </main>
     <!-- me creo pie de pagina -->
