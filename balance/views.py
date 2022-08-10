@@ -13,7 +13,7 @@ def home():
     movimientos.leer_archivo()
     #llamo y ejecuto pasandole a Flask inicio.html xk lo buscará en templates
     #le paso también lista_movimientos lo que he creado en la plantilla movs de inicio.html
-    return render_template("inicio.html", movs=movimientos.lista_movimientos)    
+    return render_template("inicio.html", movs=movimientos.movimientos)    
     
 
 @app .route ('/nuevo')

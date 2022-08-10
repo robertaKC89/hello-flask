@@ -39,3 +39,9 @@ table.paper {
     padding: 20px;
     border: solid 1px #b8174c;
 }
+
+.lista-vacia {
+    text-align: center;
+    padding: 20px;
+    color: aliceblue;
+}
