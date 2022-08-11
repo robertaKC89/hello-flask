@@ -13,11 +13,12 @@ from . import FICHERO
 # creo class de tipo movimiento
 class Movimiento:
     def __init__(self, fecha, concepto, tipo, cantidad):
-        self.errores = []   # me guardaré los errores en una lista de errores vacío de inicio
-        try:    # convierto fecha str en objeto fecha con iso format
-            self.fecha = date.fromisoformat (fecha)
-        except ValueError:
-            self.errores.append ('fecha no válida, revisa por favor')
+        self.errores = []   # me guardaré los errores en una lista de errores vacía de inicio
+        try: 
+            self.fecha = date.fromisoformat (fecha) # me convierte la fecha en objeto iso format
+        except ValueError:  # si falla me guardo el error
+            self.fecha = None
+            self.errores.append ("formato fecha no válida")
 
         self.concepto = concepto
         self.tipo = tipo

@@ -18,7 +18,7 @@ def home():
 
 @app .route ('/nuevo')
 def nuevo ():
-    return 'creación de movimiento'
+    return render_template ('nuevo.html')   #mantengo solo estructura base de la web sin contenido de main
 
 @app .route ('/modificar')
 def actualizar():
